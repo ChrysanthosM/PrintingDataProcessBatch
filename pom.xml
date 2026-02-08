@@ -8,10 +8,10 @@
         <relativePath>../PrintingMaintenance/pom.xml</relativePath>
     </parent>
 
-    <artifactId>PrintingDataProcess</artifactId>
+    <artifactId>PrintingDataProcessBatch</artifactId>
     <packaging>jar</packaging>
 
-    <name>PrintingDataProcess</name>
+    <name>PrintingDataProcessBatch</name>
     <url>https://maven.apache.org</url>
 
     <dependencies>
