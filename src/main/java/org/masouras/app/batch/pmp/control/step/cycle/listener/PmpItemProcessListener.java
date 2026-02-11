@@ -25,7 +25,7 @@ public class PmpItemProcessListener implements ItemProcessListener<PrintingDataE
 
     @Override
     public void onProcessError(PrintingDataEntity item, Exception e) {
-        if (log.isDebugEnabled()) log.error(
+        log.error(
                 "▶▶▶ PROCESS ERROR detected: item={}, exception={}",
                 item != null ? item.getId() : "null",
                 e.getClass().getName() + ": " + e.getMessage()
