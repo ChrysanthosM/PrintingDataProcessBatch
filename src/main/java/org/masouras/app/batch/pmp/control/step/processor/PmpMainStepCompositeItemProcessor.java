@@ -1,4 +1,4 @@
-package org.masouras.app.batch.pmp.control.step.business.processor;
+package org.masouras.app.batch.pmp.control.step.processor;
 
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.infrastructure.item.support.CompositeItemProcessor;

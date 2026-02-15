@@ -2,7 +2,7 @@ package org.masouras.app.batch.pmp.config.step;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.masouras.app.batch.pmp.control.step.business.processor.PmpReportProcessor;
+import org.masouras.app.batch.pmp.control.step.processor.PmpReportProcessor;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
