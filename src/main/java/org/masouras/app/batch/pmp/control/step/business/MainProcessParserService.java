@@ -1,8 +1,11 @@
 package org.masouras.app.batch.pmp.control.step.business;
 
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
+import org.masouras.app.trace.annotation.Traceable;
 import org.masouras.data.boundary.FilesFacade;
 import org.masouras.data.boundary.RepositoryFacade;
 import org.masouras.data.control.parser.FileProcessor;
@@ -24,6 +27,9 @@ public non-sealed class MainProcessParserService implements MainProcessBase {
     private final FilesFacade filesFacade;
     private final RepositoryFacade repositoryFacade;
 
+    @Traceable
+    @Timed("MainProcessParserService.processPrintingDataEntity")
+    @Counted("MainProcessParserService.processPrintingDataEntity")
     @Override
     public PrintingDataEntity processPrintingDataEntity(PrintingDataEntity printingDataEntity) {
         if (log.isInfoEnabled()) log.info("{}: Parsing printingDataEntity {}", this.getClass().getSimpleName(), printingDataEntity.getId());
