@@ -18,6 +18,7 @@ import org.w3c.dom.Document;
 
 import javax.xml.transform.TransformerException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -33,7 +34,7 @@ public non-sealed class MainProcessParserService implements MainProcessBase {
     @Override
     public PrintingDataEntity processPrintingDataEntity(PrintingDataEntity printingDataEntity) {
         if (log.isInfoEnabled()) log.info("{}: Parsing printingDataEntity {}", this.getClass().getSimpleName(), printingDataEntity.getId());
-        return saveContentValidated(printingDataEntity, getFileProcessorResult(printingDataEntity));
+        return saveContentParsed(printingDataEntity, getFileProcessorResult(printingDataEntity));
     }
 
     private FileProcessorResult getFileProcessorResult(PrintingDataEntity printingDataEntity) {
@@ -44,14 +45,7 @@ public non-sealed class MainProcessParserService implements MainProcessBase {
         return fileProcessorResult;
     }
 
-    private PrintingDataEntity saveContentValidated(@NonNull PrintingDataEntity printingDataEntity, FileProcessorResult fileProcessorResult) {
-        try {
-            String stringDocument = filesFacade.documentToString((Document) fileProcessorResult.getResult());
-            byte[] bytesDocument = stringDocument.getBytes(StandardCharsets.UTF_8);
-            return repositoryFacade.saveContentValidated(printingDataEntity, bytesDocument);
-        } catch (TransformerException e) {
-            log.error("{} failed with message: {}", this.getClass().getSimpleName(), e.getMessage(), e);
-            throw new ValidationException("Validation failed with message: " + e.getMessage(), e);
-        }
+    private PrintingDataEntity saveContentParsed(@NonNull PrintingDataEntity printingDataEntity, FileProcessorResult fileProcessorResult) {
+        return repositoryFacade.saveContentParsed(printingDataEntity, filesFacade.objectToByteArray(fileProcessorResult.getResult()));
     }
 }
