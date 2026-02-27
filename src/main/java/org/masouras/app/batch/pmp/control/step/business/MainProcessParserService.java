@@ -14,11 +14,6 @@ import org.masouras.data.domain.FileProcessorResult;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.infrastructure.item.validator.ValidationException;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.Document;
-
-import javax.xml.transform.TransformerException;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
