@@ -36,7 +36,7 @@ public class PmpSkipListener implements SkipListener<PrintingDataEntity, Printin
     }
 
     @Override
-    public void onSkipInWrite(PrintingDataEntity item, Throwable throwable) {
+    public void onSkipInWrite(PrintingDataEntity item, @NonNull Throwable throwable) {
         if (log.isWarnEnabled()) log.warn("▶▶▶ Skipped in WRITE - item id: {}, exception: {}",
                 item != null ? item.getId() : "null",
                 throwable.getMessage());
