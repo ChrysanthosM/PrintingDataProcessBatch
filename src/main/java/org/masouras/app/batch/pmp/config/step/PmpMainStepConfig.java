@@ -22,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @RequiredArgsConstructor
 @Configuration
 public class PmpMainStepConfig {
-    private static final int CHUNK_SIZE = 10;
+    private static final int CHUNK_SIZE = 1000;
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
