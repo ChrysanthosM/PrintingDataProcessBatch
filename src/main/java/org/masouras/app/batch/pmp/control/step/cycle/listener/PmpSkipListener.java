@@ -24,14 +24,13 @@ public class PmpSkipListener implements SkipListener<PrintingDataEntity, Printin
         if (log.isWarnEnabled()) log.warn("▶▶▶ Skipped in PROCESS - item id: {}, exception: {}",
                 item != null ? item.getId() : "null",
                 throwable.getMessage());
+        if (item == null) return;
 
-        if (item != null) {
-            try {
-                repositoryFacade.saveStepFailed(item, throwable.getMessage());
-                if (log.isInfoEnabled()) log.info("Successfully saved failed item: {}", item.getId());
-            } catch (Exception e) {
-                log.error("Failed to save error record for item: {}", item.getId(), e);
-            }
+        try {
+            repositoryFacade.saveStepFailed(item, throwable.getMessage());
+            if (log.isInfoEnabled()) log.info("Successfully saved failed item: {}", item.getId());
+        } catch (Exception e) {
+            log.error("Failed to save error record for item: {}", item.getId(), e);
         }
     }
 
