@@ -5,12 +5,11 @@ import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
-import org.masouras.app.trace.annotation.Traceable;
-import org.masouras.data.boundary.FilesFacade;
-import org.masouras.data.boundary.RepositoryFacade;
 import org.masouras.data.control.parser.FileValidator;
 import org.masouras.data.control.parser.FileValidatorFactory;
 import org.masouras.data.domain.FileValidatorResult;
+import org.masouras.data.facade.FilesFacade;
+import org.masouras.data.facade.RepositoryFacade;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.infrastructure.item.validator.ValidationException;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,6 @@ public non-sealed class MainProcessValidationService implements MainProcessBase 
     private final FilesFacade filesFacade;
     private final RepositoryFacade repositoryFacade;
 
-    @Traceable
     @Timed("MainProcessValidationService.processPrintingDataEntity")
     @Counted("MainProcessValidationService.processPrintingDataEntity")
     @Override

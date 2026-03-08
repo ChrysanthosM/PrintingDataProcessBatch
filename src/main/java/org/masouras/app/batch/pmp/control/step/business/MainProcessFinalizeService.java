@@ -3,7 +3,6 @@ package org.masouras.app.batch.pmp.control.step.business;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
-import org.masouras.app.trace.annotation.Traceable;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.masouras.model.mssql.schema.jpa.control.entity.enums.PrintingStatus;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public non-sealed class MainProcessFinalizeService implements MainProcessBase {
 
-    @Traceable
     @Timed("MainProcessFinalizeService.processPrintingDataEntity")
     @Counted("MainProcessFinalizeService.processPrintingDataEntity")
     @Override
