@@ -21,7 +21,7 @@ public class PmpMainProcessorParser implements ItemProcessor<PrintingDataEntity,
             case BATCH -> {
                 return printingDataEntityProcessor.processPrintingDataEntity(printingDataEntity);
             }
-            case RABBIT -> {
+            case ARTEMIS -> {
                 artemisPrintingJobProducer.send(new PrintingJobMessage(printingDataEntity.getId()));
                 return printingDataEntity;
             }
