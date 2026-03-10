@@ -3,7 +3,7 @@ package org.masouras.app.batch.pmp.control.step.cycle.listener;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.masouras.data.facade.RepositoryFacade;
+import org.masouras.facade.RepositoryFacade;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.core.listener.SkipListener;
 import org.springframework.stereotype.Component;

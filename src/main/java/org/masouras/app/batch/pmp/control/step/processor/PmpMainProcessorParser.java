@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.masouras.app.artemis.business.printing.model.PrintingJobMessage;
 import org.masouras.app.artemis.business.printing.producer.ArtemisPrintingJobProducer;
-import org.masouras.data.boundary.PrintingDataEntityProcessor;
+import org.masouras.boundary.PrintingDataEntityProcessor;
 import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.stereotype.Component;
