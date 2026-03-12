@@ -16,7 +16,7 @@ public class PmpMainProcessorValidation implements ItemProcessor<PrintingDataEnt
 
     @Override
     public PrintingDataEntity process(@NotNull PrintingDataEntity printingDataEntity) {
-        return printingDataEntityFacade.processPrintingDataEntity(printingDataEntity);
+        return printingDataEntityFacade.validatePrintingDataEntity(printingDataEntity);
     }
 }
 
