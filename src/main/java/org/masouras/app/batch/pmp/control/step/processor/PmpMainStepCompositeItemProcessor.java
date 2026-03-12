@@ -13,9 +13,8 @@ public class PmpMainStepCompositeItemProcessor extends CompositeItemProcessor<Pr
     @Autowired
     public PmpMainStepCompositeItemProcessor(
             PmpMainProcessorValidation validation,
-            PmpMainProcessorParser parser,
-            PmpMainProcessorFinalize finalizeProcessor) {
+            PmpMainProcessorParser parser) {
 
-        setDelegates(Arrays.asList(validation, parser, finalizeProcessor));
+        setDelegates(Arrays.asList(validation, parser));
     }
 }
