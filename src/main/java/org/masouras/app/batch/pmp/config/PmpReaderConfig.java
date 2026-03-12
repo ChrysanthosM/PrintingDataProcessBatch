@@ -21,7 +21,7 @@ public class PmpReaderConfig {
     @StepScope
     public JdbcCursorItemReader<PrintingDataEntity> pmpReader(DataSource dataSource) {
         return new JdbcCursorItemReader<>(dataSource,
-                printingDataSQL.getSQL(PrintingDataRepo.NameOfSQL.LIST_UNPROCESSED),
+                printingDataSQL.getSQL(PrintingDataRepo.NameOfSQL.LIST_UNPROCESSED_BATCH),
                 new PrintingDataRowMapper());
     }
 }
