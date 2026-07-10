@@ -1,6 +1,6 @@
 package org.masouras.app.batch.pmp.control.step.processor;
 
-import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
+import org.masouras.model.maria.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.infrastructure.item.support.CompositeItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

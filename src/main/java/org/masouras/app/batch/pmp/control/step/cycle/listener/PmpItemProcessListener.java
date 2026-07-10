@@ -1,7 +1,7 @@
 package org.masouras.app.batch.pmp.control.step.cycle.listener;
 
 import lombok.extern.slf4j.Slf4j;
-import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
+import org.masouras.model.maria.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.core.listener.ItemProcessListener;
 import org.springframework.stereotype.Component;
 

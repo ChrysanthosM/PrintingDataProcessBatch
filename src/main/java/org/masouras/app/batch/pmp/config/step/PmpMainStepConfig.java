@@ -8,7 +8,7 @@ import org.masouras.app.batch.pmp.control.step.cycle.listener.PmpProcessListener
 import org.masouras.app.batch.pmp.control.step.cycle.listener.PmpSkipListener;
 import org.masouras.app.batch.pmp.control.step.cycle.listener.PmpStepExecutionListener;
 import org.masouras.app.batch.pmp.control.step.processor.PmpMainStepCompositeItemProcessor;
-import org.masouras.model.mssql.schema.jpa.control.entity.PrintingDataEntity;
+import org.masouras.model.maria.schema.jpa.control.entity.PrintingDataEntity;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
